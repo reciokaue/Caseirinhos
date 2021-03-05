@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiasing;
+}
+html,body, #root{
+  height: 100%;
+  background: var(--c0);
+  position: relative;
+}
+*, button, input{
+  border:0;
+  /* outline:0; */
+
+  font-family: 'Poppins', sans-serif;
+}
+
+:root{
+  --c0: #F8F8F8;
+  --c50: #F5F5F5;
+  --c100: #F0F0F0;
+  --c200: #E8E8E8;
+  --c250: #E0E0E0;
+  --c300: #989898;
+  --c350: #808080;
+  --c400: #484848;
+  --c450: #303030;
+
+  --red: #f84a4b;
+  --blue: #6e86d6;
+  --yellow: #f9a839;
+}

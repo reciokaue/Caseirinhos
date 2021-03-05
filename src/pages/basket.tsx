@@ -1,20 +1,15 @@
 import Head from 'next/head'
 import Product from '../components/Product';
 
-export default function Home() {
+export default function Carrinho() {
   return (
     <>
       <Head>
-        <title>Caseirinhos | Home</title>
+        <title>Caseirinhos | Carrinho</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="page">
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
+      <div  className="page">
         <Product/>
       </div> 
     </>

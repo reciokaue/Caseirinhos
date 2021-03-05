@@ -4,6 +4,7 @@
   box-sizing: border-box;
 
   -webkit-font-smoothing: antialiasing;
+
 }
 html,body, #root{
   height: 100%;
@@ -13,8 +14,16 @@ html,body, #root{
 *, button, input{
   border:0;
   /* outline:0; */
-
+  
   font-family: 'Poppins', sans-serif;
+}
+.page{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 120px 1.5rem;
+
 }
 
 :root{
@@ -23,12 +32,17 @@ html,body, #root{
   --c100: #F0F0F0;
   --c200: #E8E8E8;
   --c250: #E0E0E0;
-  --c300: #989898;
+  --c300: #D0D0D0;
   --c350: #808080;
   --c400: #484848;
   --c450: #303030;
-
+  
   --red: #f84a4b;
   --blue: #6e86d6;
   --yellow: #f9a839;
+  --green: #4CD62B;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
 }

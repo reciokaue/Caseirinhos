@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link'
 
-import { Container, Item } from '../styles/Bottomnav';
+import { Container, Item, ActiveBar } from '../styles/Bottomnav';
 import { IoBasketOutline } from 'react-icons/io5'
 import { BiInfoCircle, BiCookie } from 'react-icons/bi'
 
@@ -31,6 +31,11 @@ const Bottomnav: React.FC = () => {
                     <IoBasketOutline/>
                 </Item>
             </Link> 
+            <ActiveBar className={
+                active === "info"? "left": "" + 
+                active === "home"? "middle": "" + 
+                active === "basket"? "right": ""
+            }/>
         </Container>
     );
 }

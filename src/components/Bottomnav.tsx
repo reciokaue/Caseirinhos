@@ -2,19 +2,18 @@ import React, { useState } from 'react';
 import Link from 'next/link'
 
 import { Container, Item, ActiveBar } from '../styles/Bottomnav';
-import { IoBasketOutline } from 'react-icons/io5'
-import { BiInfoCircle, BiCookie } from 'react-icons/bi'
+import { BiShoppingBag, BiUserCircle, BiCookie } from 'react-icons/bi'
 
 const Bottomnav: React.FC = () => {
     const [ active, setActive ] = useState('home')
 
     return (
         <Container>
-            <Link href="/info">
+            <Link href="/user">
                 <Item
-                    className={active === 'info' && 'active'}
-                    onClick={() => setActive('info')}>
-                    <BiInfoCircle/>
+                    className={active === 'user' && 'active'}
+                    onClick={() => setActive('user')}>
+                    <BiUserCircle/>
                 </Item>
             </Link>
             <Link href="/">
@@ -28,11 +27,11 @@ const Bottomnav: React.FC = () => {
                 <Item
                     className={active === 'basket' && 'active'}
                     onClick={() => setActive('basket')}>
-                    <IoBasketOutline/>
+                    <BiShoppingBag/>
                 </Item>
             </Link> 
             <ActiveBar className={
-                active === "info"? "left": "" + 
+                active === "user"? "left": "" + 
                 active === "home"? "middle": "" + 
                 active === "basket"? "right": ""
             }/>

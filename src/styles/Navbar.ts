@@ -11,6 +11,7 @@ export const Container = styled.div`
     width: 100%;
 
     background: var(--c0);
+    z-index: 999;
 `
 export const Topside = styled.div`
     display: flex;

@@ -1,5 +1,5 @@
 import React, { ReactNode, useState,  } from 'react';
-import { RiArrowDownSLine } from 'react-icons/ri'
+import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri'
 import {
     Container,
     SelectedOption,
@@ -10,10 +10,8 @@ import {
 } from '../styles/PaymentMethod'
 
 const PaymentMethod = () => {
-    const DropdownItems = [
-        {id: 1, title: 'dinheiro'},
-        {id: 2, title: 'pix'},
-        {id: 3, title: 'xerecard'},
+    const options = [
+        'dinheiro', 'cartao de credito', 'pixx', 'xerecard', 'mamada'
     ];
 
     const [ open, setOpen ] = useState(false)
@@ -34,9 +32,9 @@ const PaymentMethod = () => {
                 <RiArrowDownSLine/>
             </SelectedOption>
             <DropdownContainer className={open && 'opened'}>
-                {DropdownItems.map((item) =>
-                    <Option  key={item.id}>
-                        {item.title}
+                {options.map((item) =>
+                    <Option  key={item}>
+                        {item}
                     </Option>
                 )}
             </DropdownContainer>
@@ -53,8 +51,7 @@ const PaymentMethod = () => {
             <OptionContainer onClick={() => SwitchMethod(props.children)}>
                 <LeftSide></LeftSide>
                 <RightSide>
-                    <h1>{props.children}</h1>
-                    <p>{props.subtitle}</p>
+                    <h1 className={props.children === active && 'active'}>{props.children}</h1>
                 </RightSide>
             </OptionContainer>
         )
@@ -62,7 +59,3 @@ const PaymentMethod = () => {
 }
 
 export default PaymentMethod;
-
-function SwitchMethod(active: string) {
-    throw new Error('Function not implemented.');
-}

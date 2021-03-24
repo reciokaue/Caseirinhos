@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Product from '../components/Product';
 
-export default function Home({ data }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -10,9 +10,6 @@ export default function Home({ data }) {
       </Head>
 
       <div className="page">
-        {/* <h1>{data.name}</h1> */}
-
-
         <Product/>
         <Product/>
         <Product/>
@@ -22,19 +19,4 @@ export default function Home({ data }) {
       </div> 
     </>
   )
-}
-export const getServerSideProps = async () => {
-  // const  { userID } = useContext(LoginContext)
-
-  // const response = await api.get(`user/${userID}`);
-  // const data = await response.json()
-
-  const res = await fetch(`http://localhost:3000/api/user/5`)
-  const data = await res.json()
-
-  return {
-    props: {
-      data
-    },
-  }
 }

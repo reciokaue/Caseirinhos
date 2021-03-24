@@ -9,10 +9,10 @@ const Bottomnav: React.FC = () => {
 
     return (
         <Container>
-            <Link href="/user">
+            <Link href="/login">
                 <Item
-                    className={active === 'user' && 'active'}
-                    onClick={() => setActive('user')}>
+                    className={active === 'login' && 'active'}
+                    onClick={() => setActive('login')}>
                     <BiUserCircle/>
                 </Item>
             </Link>
@@ -31,7 +31,7 @@ const Bottomnav: React.FC = () => {
                 </Item>
             </Link> 
             <ActiveBar className={
-                active === "user"? "left": "" + 
+                active === "login"? "left": "" + 
                 active === "home"? "middle": "" + 
                 active === "basket"? "right": ""
             }/>

@@ -23,7 +23,7 @@ html,body, #root{
   flex-direction: column;
 
   padding: 120px 1.5rem;
-
+  position: relative;
 }
 
 :root{

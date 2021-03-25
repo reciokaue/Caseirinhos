@@ -36,7 +36,7 @@ const Login: React.FC = () => {
       const data = await axios.post('/api/user/signup', {name: name, email: email, password: password})
       
       if(data.data !== '' ){
-        ShowModal(1500, `${data.data.name} ${name}`)
+        ShowModal(1500, data.data.message)
         setTimeout(function() {
           OpenFormLogin()
         }, 2500);

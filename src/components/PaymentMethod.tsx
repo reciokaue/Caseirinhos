@@ -11,7 +11,7 @@ import {
 
 const PaymentMethod = () => {
     const options = [
-        'dinheiro', 'cartao de credito', 'pixx', 'xerecard', 'mamada'
+        'dinheiro', 'cartao de credito', 'pixx', 
     ];
 
     const [ open, setOpen ] = useState(false)

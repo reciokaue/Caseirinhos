@@ -1,13 +1,12 @@
 import React, { FormEvent, useState } from 'react';
 
 import { Logo, Heading, Button, Container, ButtonForm, CloseForm, ModalFrame } from '../styles/Login';
-import { GrFormClose } from 'react-icons/gr'
-
-import axios from 'axios';
 import Input from './Input';
+import { GrFormClose } from 'react-icons/gr'
 
 import { Tab, Tabs, TabList, TabPanel,  } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import api from '../../database/api'
 
 const Login: React.FC = () => {
     const [ opened, setOpen ] = useState(false) 
@@ -21,8 +20,8 @@ const Login: React.FC = () => {
     
     async function  HandleLogin(event: FormEvent){
       event.preventDefault()
-      const data = await axios.post('/api/user/login', {email: email, password: password})
-      let message = data.data.message
+      const data = await api.post('user/login', {email: email, password: password})
+      const message = data.data.message
       
       if(message === 'succeful' ){
         ShowModal(1500, message)
@@ -33,7 +32,7 @@ const Login: React.FC = () => {
     }
     async function  HandleSignUp(event: FormEvent){
       event.preventDefault()
-      const data = await axios.post('/api/user/signup', {name: name, email: email, password: password})
+      const data = await api.post('user/signup', {name: name, email: email, password: password})
       
       if(data.data !== '' ){
         ShowModal(1500, data.data.message)

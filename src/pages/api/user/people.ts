@@ -2,7 +2,6 @@ import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 import sqlite from 'sqlite'
 import { verify } from 'jsonwebtoken'
 
-
 export const authenticated = (fn: NextApiHandler) => async (request: NextApiRequest, response: NextApiResponse) => {
     const { GUID_TOKEN } = process.env
     let token = request.cookies.auth!
